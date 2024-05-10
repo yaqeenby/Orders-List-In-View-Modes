@@ -1,0 +1,22 @@
+<ng-container *ngIf="section">
+  <label class="text-lg fw-medium mb-1" *ngIf="section.title">{{section.title | titlecase}}</label><br>
+  <label class="text-md mb-2" *ngIf="section.question">{{section.question | titlecase}}</label>
+  <div class="row" *ngIf="section.fields">
+    <div class="col-6" *ngFor="let field of section.fields">
+      <label class="fs-md mb-1">{{field.label | titlecase}}</label>
+
+      <mat-select class="form-control fs-md" [(ngModel)]="field.value" [placeholder]="field.placeholder"
+                  *ngIf="field.type === 'select'" [multiple]="field.multiple" (selectionChange)="onFieldChanged()">
+        <mat-option class="fs-md text-capitalize" *ngFor="let op of field.options"
+                    [value]="op.value">{{op.name}}</mat-option>
+      </mat-select>
+
+      <input type="number" class="form-control p-2 fs-md" [(ngModel)]="field.value" [placeholder]="field.placeholder"
+             *ngIf="field.type === 'number'" (change)="onFieldChanged()">
+
+      <input type="text" class="form-control p-2 fs-md" [(ngModel)]="field.value" [placeholder]="field.placeholder"
+             *ngIf="field.type === 'text'" (change)="onFieldChanged()">
+    </div>
+
+  </div>
+</ng-container>

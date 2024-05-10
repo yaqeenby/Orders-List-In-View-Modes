@@ -1,0 +1,79 @@
+<div class="border-secondary-subtle bg-white border-l">
+  <div class="d-flex">
+    <div class="col-3 d-flex flex-column justify-content-center row-gap-2 px-4 py-2">
+      <div class="d-flex flex-column">
+        <label class="text-secondary fs-sm">03 Sep, 2022</label>
+        <label class="text-capitalize"><span class="fw-medium fs-lg">{{'Order #Yaqeen1234'}}</span> <span
+          class="text-secondary fs-md fst-italic"><i class="bi bi-dot"></i>{{data.delivery_name}}</span></label>
+      </div>
+      <label class="text-primary fs-sm">CASH 22 JOD</label>
+      <p class="fs-md text-secondary" *ngIf="data.description">
+        {{data.description}}
+      </p>
+    </div>
+    <div class="col-3 d-flex flex-column justify-content-center row-gap-2 px-4 py-2">
+      <div class="d-flex flex-row align-items-center" *ngIf="data.location">
+        <i class="bi bi-geo-alt text-secondary me-2"></i>
+        <label class="fs-md text-secondary">{{data.location}}</label>
+      </div>
+
+      <div class="d-flex flex-row align-items-center" *ngIf="data.brand">
+        <i class="bi bi-buildings text-secondary me-2"></i>
+        <label class="fs-md text-secondary text-capitalize">{{data.brand}} - {{data.branch}}</label>
+      </div>
+
+      <div class="d-flex flex-row align-items-center" *ngIf="data.customer_id">
+        <i class="bi bi-person fs-6 text-secondary me-2"></i>
+        <label class="fs-md text-secondary text-capitalize">{{data.customer_name}} <span
+          class="text-primary">+{{data.customer_number}}</span></label>
+      </div>
+
+      <div class="d-flex flex-row align-items-center" *ngIf="data.driver_id">
+        <i class="bi bi-truck-flatbed fs-6 text-secondary me-2"></i>
+        <label class="fs-md text-secondary text-capitalize">{{data.driver_name}} <span
+          class="text-primary">+{{data.driver_number}}</span></label>
+      </div>
+    </div>
+    <div class="col-4 d-flex flex-column justify-content-center fs-md row-gap-4 py-2 px-4" *ngIf="!circular">
+      <div class="d-flex flex-column row-gap-2 w-50">
+        <label class="text-secondary">Order Preparation</label>
+        <app-colored-progress [color]="'warning'" [progress]="30"></app-colored-progress>
+      </div>
+
+
+      <div class="d-flex flex-column row-gap-2 w-50">
+        <label class="text-secondary">Order Delivery</label>
+        <app-colored-progress [color]="'warning'" [progress]="50"></app-colored-progress>
+      </div>
+
+
+      <div class="d-flex flex-column row-gap-2 w-50">
+        <label class="text-secondary">Order Completion</label>
+        <app-colored-progress [color]="'warning'" [progress]="75"></app-colored-progress>
+      </div>
+
+    </div>
+
+    <div class="col-4 row py-2 px-4 px-0 mx-0 fs-md" *ngIf="circular">
+      <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+        <label class="text-secondary">Preparation</label>
+        <app-circular-progress [progress]="69"></app-circular-progress>
+      </div>
+
+
+      <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+        <label class="text-secondary">Delivering</label>
+        <app-circular-progress [progress]="75"></app-circular-progress>
+      </div>
+
+      <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+        <label class="text-secondary">Delivering</label>
+        <app-circular-progress [progress]="100"></app-circular-progress>
+      </div>
+    </div>
+    <div class="col-2 mx-0 px-0">
+      <img class="w-100 h-100" [src]="data.img">
+    </div>
+  </div>
+</div>
+

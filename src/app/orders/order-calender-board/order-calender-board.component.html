@@ -1,0 +1,81 @@
+<div class="w-100">
+  <div class="p-2 d-flex flex-column mb-3">
+    <label class="fs-6 fw-bold mb-1">Scheduled Orders</label>
+    <label class="text-secondary fs-md">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</label>
+  </div>
+  <div class="row px-0 mx-0 bg-pending">
+    <div class="col-1 p-0 border border-secondary-subtle p-4 py-2 text-center">
+      <i class="bi bi-calendar-minus"></i>
+    </div>
+    <div class="col-11 row  px-0 mx-0 text-capitalize text-center fs-md fw-medium">
+      <label class="col border border-secondary-subtle p-4 py-2">pending <span class="text-primary">1</span></label>
+      <label class="col border border-secondary-subtle p-4 py-2">accepted <span class="text-primary">3</span></label>
+      <label class="col border border-secondary-subtle p-4 py-2">in progress <span class="text-primary">4</span></label>
+      <label class="col border border-secondary-subtle p-4 py-2">not paid <span class="text-primary">3</span></label>
+      <label class="col border border-secondary-subtle p-4 py-2">accepted <span class="text-primary">3</span></label>
+    </div>
+  </div>
+  <ng-container *ngFor="let r of row">
+    <ng-container *ngIf="r%2 === 0">
+      <div class="row  px-0 mx-0">
+        <div class="col-1 p-0 border border-secondary-subtle p-2 d-flex align-items-center justify-content-center text-capitalize text-center fs-md fw-medium bg-pending">
+          11 Sep
+          <br/>
+          2024
+        </div>
+        <div class="col-11 row  px-0 mx-0">
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of pendingOrders" [status]="'pending'" [collapseDetails]="true" [showColor]="true"
+                            [data]="c"></app-order-card>
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <!--        <app-order-card *ngFor="let c of acceptedOrders" [status]="'accepted'" [collapseDetails]="true"  [data]="c"></app-order-card>-->
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of inProgressOrders" [status]="'inProgress'" [showColor]="true" [collapseDetails]="true"
+                            [data]="c"></app-order-card>
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of notPaidOrders" [status]="'notPaid'" [showColor]="true" [collapseDetails]="true"
+                            [data]="c"></app-order-card>
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of acceptedOrders" [status]="'accepted'" [showColor]="true" [collapseDetails]="true"
+                            [data]="c"></app-order-card>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="r%2 !== 0">
+      <div class="row  px-0 mx-0">
+        <div class="col-1 p-0 border border-secondary-subtle p-2 d-flex align-items-center justify-content-center text-capitalize text-center fs-md fw-medium bg-pending">
+          12 Sep
+          <br/>
+          2024
+        </div>
+        <div class="col-11 row  px-0 mx-0">
+          <div class="col border border-secondary-subtle p-1">
+            <!--        <app-order-card *ngFor="let c of pendingOrders" [status]="'pending'" [collapseDetails]="true" [data]="c"></app-order-card>-->
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of acceptedOrders" [status]="'accepted'" [showColor]="true" [collapseDetails]="true"
+                            [data]="c"></app-order-card>
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <!--        <app-order-card *ngFor="let c of inProgressOrders" [status]="'inProgress'"  [collapseDetails]="true"  [data]="c"></app-order-card>-->
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of notPaidOrders" [status]="'notPaid'" [showColor]="true" [collapseDetails]="true"
+                            [data]="c"></app-order-card>
+          </div>
+          <div class="col border border-secondary-subtle p-1">
+            <app-order-card *ngFor="let c of acceptedOrders" [status]="'accepted'" [showColor]="true" [collapseDetails]="true"
+                            [data]="c"></app-order-card>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+
+

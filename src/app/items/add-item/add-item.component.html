@@ -1,0 +1,91 @@
+<div class="d-flex flex-column h-100">
+  <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+    <div class="d-flex flex-column">
+      <label class="fs-6 fw-bold mb-1">Add Order</label>
+      <label class="text-secondary fs-md">Lorem Ipsum has been the industry's standard.</label>
+    </div>
+
+    <i (click)="onCloseClicked.emit()" class="bi bi-x-lg"></i>
+  </div>
+
+  <form [formGroup]="form" action="" class="row flex-grow-1 py-2 overflow-y-auto">
+    <div class="d-flex flex-column row-gap-2">
+      <ng-container *ngIf="index === 1">
+        <label class="fs-lg fw-medium">Let us know your product</label>
+        <label class="fs-md">What's your product consider?</label>
+        <div class="fs-md">
+          <label class="fw-medium mb-1">Name</label>
+          <input type="text" class="form-control p-2 fs-md" [placeholder]="'name'">
+        </div>
+
+        <div class="fs-md">
+          <label class="fw-medium mb-1">Category</label>
+          <mat-select class="form-control fs-md" [placeholder]="'select category'">
+            <mat-option class="fs-md text-capitalize" *ngFor="let op of categories"
+                        [value]="op">{{op}}</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="fs-md">
+          <label class="fw-medium mb-1">Price</label>
+          <div class="d-flex">
+            <input type="number" class="form-control p-2 fs-md w-75 border-end-0 rounded-end-0" placeholder="Price">
+            <mat-select class="form-control fs-md w-25 rounded-start-0 bg-secondary-subtle" [placeholder]="'Currency'">
+              <mat-option [value]="'jod'" class="fs-md">JOD</mat-option>
+              <mat-option [value]="'usa'" class="fs-md">USA</mat-option>
+              <mat-option [value]="'id'" class="fs-md">ID</mat-option>
+            </mat-select>
+          </div>
+        </div>
+
+        <div class="fs-md">
+          <label class="fw-medium mb-1">Quantity</label>
+          <input type="number" class="form-control p-2 fs-md" placeholder="Quantity">
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="index === 2">
+        <label class="fs-lg fw-medium">More Details</label>
+        <label class="fs-md">What's your product special properties?</label>
+
+        <div class="row row-gap-2">
+          <div class="col-6">
+            <input type="text" class="form-control p-2 fs-md" placeholder="Property Name">
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control p-2 fs-md" placeholder="Property Value">
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control p-2 fs-md" placeholder="Property Name">
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control p-2 fs-md" placeholder="Property Value">
+          </div>
+        </div>
+
+        <div class="fs-md tag-container">
+          <label class="fw-medium mb-1">Tags</label>
+          <div class="d-flex align-items-center flex-wrap p-2 border">
+            <p *ngFor="let cat of categories; let i = index"
+               class="p-1 px-2 border rounded-pill bg-primary-subtle text-primary m-0">{{cat}} <i
+              (click)="removeCategory(i)" class="bi bi-x-circle-fill"></i></p>
+            <input #tag type="text" class="ms-2 border-0 p-2 fs-md bg-transparent" [formControlName]="'category'"
+                   [placeholder]="'category'" (keydown.enter)="addCategory(tag.value);">
+          </div>
+        </div>
+
+        <div class="fs-md">
+          <label class="fw-medium mb-1">Description</label>
+          <textarea type="text" class="form-control p-2 fs-md" placeholder="describe you item!"></textarea>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-between p-4">
+    <button class="btn bg-warning-subtle border-0 rounded-pill fs-lg me-2" [disabled]="index === 1" (click)="index = index - 1">Back</button>
+    <button class="btn bg-primary-subtle border-0 rounded-pill fs-lg" (click)="index = index + 1">{{index < 2 ? 'next' : 'Add Item'}}</button>
+  </div>
+
+</div>

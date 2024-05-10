@@ -1,0 +1,22 @@
+<div class="d-flex flex-column border-bottom pt-4">
+  <div class="d-flex flex-row justify-content-between align-items-center px-4 pb-4">
+    <label class="fs-3 fw-semibold">Orders</label>
+
+    <button type="button" class="btn btn-complete text-white btn-sm p-1 px-4 me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">+Add Order</button>
+  </div>
+<div class="d-flex px-2">
+  <ng-container *ngFor="let tab of tabs">
+    <div class="d-flex bg-transparent py-2 px-3 text-capitalize" [ngClass]="view === tab.view?'active-tab':''" (click)="changeView(tab.view)">
+      {{tab.title}}
+    </div>
+  </ng-container>
+</div>
+</div>
+
+<button type="button" #closeBtn class="btn-close text-reset d-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+<div class="offcanvas bg-pending offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-body">
+    <app-add-item (onCloseClicked)="closeBtn.click()" class="h-100"></app-add-item>
+  </div>
+</div>

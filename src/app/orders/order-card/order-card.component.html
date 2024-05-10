@@ -1,0 +1,67 @@
+<div class="d-flex flex-column p-3 {{showBorder? 'border' : ''}} {{hasShadow? 'shadow-sm' : ''}} rounded-2"  [ngClass]="showColor?'bg-' + status +'':'bg-secondary-subtle '">
+  <!--  header-->
+  <div class="d-flex flex-row justify-content-between">
+    <div class="d-flex flex-column mb-2">
+      <label class="text-capitalize fw-medium fs-lg mb-1">{{data.order_id}}</label>
+      <label class="text-secondary fs-sm">03 Sep, 2022</label>
+    </div>
+    <div class="d-flex flex-row justify-content-end w-25">
+      <i class="bi bi-three-dots text-secondary me-2"></i>
+      <i class="bi bi-arrows-expand text-secondary" (click)="expand()" *ngIf="collapseDetails && !expanded"></i>
+      <i class="bi bi-arrows-collapse text-secondary" (click)="collapse()" *ngIf="collapseDetails && expanded"></i>
+    </div>
+  </div>
+
+  <!--  additional info-->
+  <div class="d-flex flex-column" *ngIf="expanded">
+
+    <p class="fs-md" *ngIf="data.description">
+      {{data.description}}
+    </p>
+
+    <div class="bg-warning-subtle overflow-hidden" *ngIf="data.img" style="height: 7rem; width: 100%">
+      <img [src]="data.img" style="width: 100%; height: 100%; opacity: 50%;">
+    </div>
+
+    <div class="d-flex flex-row flex-wrap row-gap-1 column-gap-1 py-1" *ngIf="data.tags && data.tags.length > 0 && false">
+      <app-colored-badge *ngFor="let tag of data.tags; let i = index" rounded="2" [color]="tag.color"
+                         [text]="tag.tag"></app-colored-badge>
+    </div>
+
+    <div class="d-flex flex-row align-items-center" *ngIf="data.location">
+      <i class="bi bi-geo-alt text-secondary me-2"></i>
+      <label class="fs-md">{{data.location}}</label>
+    </div>
+
+    <div class="d-flex flex-row align-items-center" *ngIf="data.brand">
+      <i class="bi bi-buildings text-secondary me-2"></i>
+      <label class="fs-md">{{data.brand}} - {{data.branch}}</label>
+    </div>
+
+  </div>
+
+
+  <div class="d-flex flex-column">
+
+    <div class="d-flex flex-row justify-content-between align-items-center mt-2"
+         *ngIf="status === 'notPaid' && data.remaining">
+      <label class="text-danger font-sm">$REMAINING {{data.remaining}}JOD</label>
+    </div>
+
+    <div class="d-flex flex-row justify-content-between align-items-center mt-2" *ngIf="status === 'inProgress'">
+      <app-colored-progress class="w-50" [color]="data.progress < 25?'danger': data.progress >= 25 && data.progress < 75?'warning':'primary'" [progress]="data.progress"></app-colored-progress>
+      <label class="text-secondary font-sm">+5 notes</label>
+    </div>
+
+    <div class="d-flex flex-row justify-content-end align-items-center mt-2" *ngIf="status === 'accepted'">
+      <button class="btn btn-start text-white btn-sm w-100">Start</button>
+    </div>
+
+    <div class="d-flex flex-row justify-content-between align-items-center mt-2" *ngIf="status === 'pending'">
+      <button class="btn btn-outline-danger font-sm w-50 me-1">Reject</button>
+      <button class="btn btn-accept text-white font-sm w-50" w-50>Accept</button>
+    </div>
+
+  </div>
+</div>
+

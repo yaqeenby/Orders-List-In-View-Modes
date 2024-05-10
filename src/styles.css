@@ -1,0 +1,379 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+body {
+  margin: 0;
+  /*font-family: Poppins, Inter !important;*/
+  line-height: unset !important;
+}
+.gap-15-px{
+  gap: 0.9375rem !important;
+}
+
+.gap-2-px{
+  gap: 0.125rem !important;
+}
+
+.gap-3-px{
+  gap: 0.1875rem !important;
+}
+
+.gap-10-px{
+  gap: 0.625rem !important;
+}
+
+.gap-4-px{
+  gap: 0.25rem !important;
+}
+
+.gap-40-px{
+  gap: 2.5rem !important;
+}
+
+.p-10-px{
+  padding: 0.625rem !important;
+}
+
+.px-12-px{
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
+}
+
+.px-9-px{
+  padding-right: 0.5625rem !important;
+  padding-left: 0.5625rem !important;
+}
+
+.px-30-px{
+  padding-right: 1.875rem !important;
+  padding-left: 1.875rem !important;
+}
+
+.py-5-px{
+  padding-top: 0.3125rem !important;
+  padding-bottom: 0.3125rem !important;
+}
+
+.py-8-px{
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.py-15-px{
+  padding-top: 0.9375rem !important;
+  padding-bottom: 0.9375rem !important;
+}
+
+.fs-10-px{
+  font-size: 0.625rem !important;
+}
+
+.fs-8-px{
+  font-size: 0.5rem !important;
+}
+
+.fs-12-px{
+  font-size: 0.75rem !important;
+}
+
+.fs-16-px{
+  font-size: 1rem !important;
+}
+
+.text-gray-1{
+  color: #9F9F9F !important;
+}
+
+.text-gray-2{
+  color: #D0D1D2 !important;
+}
+
+.text-purple-1{
+  color: #5B4A99 !important;
+}
+
+.text-red-1{
+  color: #F74D4D !important;
+}
+
+.bg-purple-1{
+  background: #87A2FF !important;
+}
+
+.bg-purple-2{
+  background: #EAEFFF !important;
+}
+
+.bg-purple-3{
+  background: #5B4A99 !important;
+}
+
+.bg-purple-4{
+  background: #F2F2F7 !important;
+}
+
+.bg-purple-5{
+  background: #8872DD !important;
+}
+
+.bg-red-1{
+  background: #F74D4D !important;
+}
+
+.br-top-1px{
+  border-top-width: 1px !important;
+  border-top-style: solid !important;
+}
+
+.br-purple-1{
+  border-color: #8872DD !important;
+}
+
+.rounded-bottom-15-px{
+  border-bottom-left-radius: 0.9375rem !important;
+  border-bottom-right-radius: 0.9375rem !important;
+}
+
+.rounded-18-px{
+  border-radius: 1.125rem !important;
+}
+
+.bg-gray-1{
+   background: #D0D1D2 !important;
+}
+
+.bg-orange-1{
+  background: #F7931A !important;
+}
+
+.bg-blue-1{
+  background: #1F8DED !important;
+}
+
+.bg-red-2{
+  background: #FF7977 !important;
+}
+.width-2-px{
+  width: 0.125rem !important;
+}
+
+.width-40-px{
+  width: 2.5rem !important;
+}
+
+.height-40-px{
+  height: 2.5rem !important;
+}
+/*!* You can add global styles to this file, and also import other style files *!*/
+/*.flex{*/
+/*  display: flex;*/
+/*}*/
+
+/*.flex-row{*/
+/*  flex-direction: row;*/
+/*}*/
+
+/*.flex-col{*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*.items-center{*/
+/*  align-items: center;*/
+/*}*/
+
+/*.justify-between{*/
+/*  justify-content: space-between;;*/
+/*}*/
+
+/*.p-2{*/
+/*  padding: 0.25rem;*/
+/*}*/
+
+/*.p-4{*/
+/*  padding: 1rem;*/
+/*}*/
+
+.font-sm{
+  font-size: 0.75rem !important;
+}
+
+.dark-gray{
+  background: #f0f0f0;
+}
+
+.light-gray{
+  background: #e1e1e2;
+}
+
+html, body { height: 100%; }
+
+div{
+  max-height: 100%;
+}
+
+.fs-lg{
+  font-size: 0.9rem !important;
+}
+
+.fs-md{
+  font-size: 0.75rem !important;
+}
+
+.fs-sm{
+  font-size: 0.65rem !important;
+}
+
+.br-light{
+  border: 1px solid whitesmoke;
+}
+
+.br-light-top{
+  border-top: 1px solid whitesmoke;
+}
+
+.br-light-bottom{
+  border-bottom: 1px solid whitesmoke;
+}
+
+.br-light-left{
+  border-left: 1px solid whitesmoke;
+}
+
+.br-light-right{
+  border-right: 1px solid whitesmoke;
+}
+
+.bg-pending{
+   background: whitesmoke;
+   /*background: ghostwhite;*/
+  /*gray*/
+}
+
+.btn-accept{
+ background: #68C87E !important;
+}
+
+.btn-reject{
+
+}
+
+.btn-start{
+ background: #649AEA !important;
+}
+
+.btn-complete{
+  background: #1799A8 !important;
+}
+
+.text-pending{
+  color: #68C87E !important;
+}
+
+.text-accepted{
+  color: #649AEA !important;
+}
+
+.text-inProgress{
+  color: #1799A8 !important;
+}
+
+.text-complete{
+  color: #1799A8 !important;
+}
+
+.br-pending{
+  /*border-color: #68C87E !important;*/
+  border: 0.2rem solid #68C87E !important;
+}
+
+.br-reject{
+
+}
+
+.br-accepted{
+  /*border-color: #649AEA !important;*/
+  border: 0.2rem solid #a5bde1 !important;
+}
+
+.br-completed{
+  border: 0.2rem solid #1799A8 !important;
+}
+
+
+.bg-inProgress{
+  background: aliceblue;
+  /*background: ghostwhite;*/
+  /*blue*/
+}
+
+.bg-notPaid{
+  background: seashell;
+  /*background: ghostwhite;*/
+  /*background: linen;*/
+  /*warn*/
+}
+
+.bg-accepted{
+  background: honeydew;
+  /*background: ghostwhite;*/
+  /*green*/
+}
+
+.bg-dark-pending{
+   background: slategray;
+  /*gray*/
+}
+
+.bg-dark-inProgress{
+  background: royalblue;
+  /*blue*/
+}
+
+.bg-dark-notPaid{
+  background: rosybrown;
+  /*background: linen;*/
+  /*warn*/
+}
+
+.bg-dark-accepted{
+  background: mediumturquoise;
+  /*green*/
+}
+
+.rounded-top-start-4 {
+  border-top-left-radius: var(--bs-border-radius-xl) !important;
+}
+.rounded-top-end-4 {
+  border-top-right-radius: var(--bs-border-radius-xl) !important;
+}
+.rounded-bottom-start-4 {
+  border-bottom-left-radius: var(--bs-border-radius-xl) !important;
+}
+.rounded-bottom-end-4 {
+  border-bottom-right-radius: var(--bs-border-radius-xl) !important;
+}
+
+.active-tab{
+  position: relative;
+  bottom: -0.1rem;
+  border-bottom: 0.1rem solid #1799a8;
+}
+
+.bg-right-menu{
+  background: darkslategrey !important;
+}
+
+.bg-light-pink{
+  background: lavenderblush;
+}
+
+.system-form-field{
+
+}
+
+.system-form-field input{
+  padding: 1rem;
+  border: 1px solid lightcoral;
+}
+
+.border-l {
+  border-left: 5px solid;
+}

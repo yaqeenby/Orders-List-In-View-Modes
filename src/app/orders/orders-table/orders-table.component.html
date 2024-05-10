@@ -1,0 +1,167 @@
+<div class="d-flex flex-column">
+  <div class="p-2 d-flex flex-column mb-3">
+    <label class="fs-6 fw-bold mb-1">Orders List</label>
+    <label class="text-secondary fs-md">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</label>
+  </div>
+
+  <div class="d-grid br-light bg-white">
+    <!--    header-->
+    <div class="d-grid orders-grid shadow-sm fs-md text-uppercase border-bottom" *ngIf="pendingOrders.length > 0">
+      <div class="br-light-right p-3">
+        ORDER
+      </div>
+      <div class="br-light-right p-3">
+        DATE
+      </div>
+      <div class="br-light-right p-3">
+        BRAND
+      </div>
+      <div class="br-light-right p-3">
+        STATUS
+      </div>
+      <div class="br-light-right p-3">
+        LOCATION
+      </div>
+      <div class="br-light-right p-3">
+        Processing
+      </div>
+    </div>
+    <!--    rows-->
+    <div class="overflow-hidden overflow-y-auto">
+      <div class="d-grid orders-grid text-secondary text-capitalize br-light fs-md align-items-center" *ngFor="let o of pendingOrders; let i = index">
+        <div class="px-3 py-2 d-flex align-items-center">
+          <img class="rounded-circle border me-2" width="30" height="30" *ngIf="o.img else noImg" [src]="o.img">
+          <ng-template #noImg>
+            <div class="d-flex justify-content-center align-items-center bg-primary-subtle rounded-circle me-2" style="width: 30px; height: 30px">{{o.order_id.toString()[0]}}</div>
+          </ng-template>
+          {{o.order_id}}
+        </div>
+        <div class="px-3 py-2">
+          {{'27, Sep 2023'}}
+        </div>
+        <div class="px-3 py-2">
+          {{o.brand}} - {{o.branch}}
+        </div>
+        <div class="px-3 py-2 text-uppercase" [ngClass]="'text-' + o.status">
+          {{o.status}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.location}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.current_phase}}
+        </div>
+        <div class="px-3 p-2 text-end">
+          <i class="bi bi-chevron-right text-black fs-6"></i>
+        </div>
+      </div>
+
+      <div class="bg-light-pink fs-md fw-medium px-3 py-1 fst-italic">
+        Pending
+      </div>
+
+      <div class="d-grid orders-grid text-secondary text-capitalize br-light fs-md align-items-center" *ngFor="let o of acceptedOrders; let i = index">
+        <div class="px-3 py-2 d-flex align-items-center">
+          <img class="rounded-circle border me-2" width="30" height="30" *ngIf="o.img else noImg" [src]="o.img">
+          <ng-template #noImg>
+            <div class="d-flex justify-content-center align-items-center bg-primary-subtle rounded-circle me-2" style="width: 30px; height: 30px">{{o.order_id.toString()[0]}}</div>
+          </ng-template>
+          {{o.order_id}}
+        </div>
+        <div class="px-3 py-2">
+          {{'27, Sep 2023'}}
+        </div>
+        <div class="px-3 py-2">
+          {{o.brand}} - {{o.branch}}
+        </div>
+        <div class="px-3 py-2 text-uppercase" [ngClass]="'text-' + o.status">
+          {{o.status}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.location}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.current_phase}}
+        </div>
+        <div class="px-3 p-2 text-end">
+          <i class="bi bi-chevron-right text-black fs-6"></i>
+        </div>
+      </div>
+
+      <div class="bg-light-pink fs-md fw-medium px-3 py-1 fst-italic">
+        Accepted
+      </div>
+
+      <div class="d-grid orders-grid text-secondary text-capitalize br-light fs-md align-items-center" *ngFor="let o of inProgressOrders; let i = index">
+        <div class="px-3 py-2 d-flex align-items-center">
+          <img class="rounded-circle border me-2" width="30" height="30" *ngIf="o.img else noImg" [src]="o.img">
+          <ng-template #noImg>
+            <div class="d-flex justify-content-center align-items-center bg-primary-subtle rounded-circle me-2" style="width: 30px; height: 30px">{{o.order_id.toString()[0]}}</div>
+          </ng-template>
+          {{o.order_id}}
+        </div>
+        <div class="px-3 py-2">
+          {{'27, Sep 2023'}}
+        </div>
+        <div class="px-3 py-2">
+          {{o.brand}} - {{o.branch}}
+        </div>
+        <div class="px-3 py-2 text-uppercase" [ngClass]="'text-' + o.status">
+          {{o.status}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.location}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.current_phase}}
+        </div>
+        <div class="px-3 p-2 text-end">
+          <i class="bi bi-chevron-right text-black fs-6"></i>
+        </div>
+      </div>
+
+      <div class="bg-light-pink fs-md fw-medium px-3 py-1 fst-italic">
+        In Progress
+      </div>
+
+      <div class="d-grid orders-grid text-secondary text-capitalize br-light fs-md align-items-center" *ngFor="let o of inProgressOrders; let i = index">
+        <div class="px-3 py-2 d-flex align-items-center">
+          <img class="rounded-circle border me-2" width="30" height="30" *ngIf="o.img else noImg" [src]="o.img">
+          <ng-template #noImg>
+            <div class="d-flex justify-content-center align-items-center bg-primary-subtle rounded-circle me-2" style="width: 30px; height: 30px">{{o.order_id.toString()[0]}}</div>
+          </ng-template>
+          {{o.order_id}}
+        </div>
+        <div class="px-3 py-2">
+          {{'27, Sep 2023'}}
+        </div>
+        <div class="px-3 py-2">
+          {{o.brand}} - {{o.branch}}
+        </div>
+        <div class="px-3 py-2 text-uppercase" [ngClass]="'text-' + o.status">
+          {{o.status}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.location}}
+        </div>
+        <div class="px-3 p-2">
+          {{o.current_phase}}
+        </div>
+        <div class="px-3 p-2 text-end">
+          <i class="bi bi-chevron-right text-black fs-6"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-end text-secondary p-3">
+    <i class="bi bi-caret-left-fill fs-6"></i>
+    <label class="mx-2">5</label>
+    <i class="bi bi-caret-right-fill fs-6"></i>
+    <label class="ms-4">Of 10</label>
+  </div>
+</div>
+
+
+
+

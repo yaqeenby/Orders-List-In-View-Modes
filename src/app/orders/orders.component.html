@@ -1,0 +1,10 @@
+<div class="d-flex flex-column h-100">
+  <app-header (onChangeView)="view = $event"></app-header>
+  <div class="bg-secondary-subtle p-4 d-flex flex-column flex-grow-1 overflow-y-auto">
+    <app-orders-board *ngIf="view === 'board'"></app-orders-board>
+    <app-order-calender-board *ngIf="view === 'calender'"></app-order-calender-board>
+    <app-orders-table *ngIf="view === 'all'"></app-orders-table>
+    <app-active-orders *ngIf="view === 'active'"></app-active-orders>
+  </div>
+
+</div>

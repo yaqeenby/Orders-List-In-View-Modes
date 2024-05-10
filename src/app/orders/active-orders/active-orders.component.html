@@ -1,0 +1,9 @@
+<div class="d-flex flex-column">
+  <div class="p-2 d-flex flex-column mb-3">
+    <label class="fs-6 fw-bold mb-1">Active Orders</label>
+    <label class="text-secondary fs-md">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</label>
+  </div>
+  <div class="d-flex flex-column row-gap-4">
+    <app-order-row *ngFor="let o of pendingOrders; let i = index" [status]="'pending'" [data]="o" [circular]="i%2 === 0"></app-order-row>
+  </div>
+</div>
